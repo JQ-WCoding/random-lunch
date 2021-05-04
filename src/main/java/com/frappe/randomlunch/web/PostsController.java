@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PostsController {
-    @GetMapping ( "/hello" )
+    @GetMapping ( "/main" )
     public String hello() {
-        return "hello";
+        return "/main/main";
     }
 }
