@@ -11,4 +11,9 @@ public class PostsController {
     public String hello() {
         return "index";
     }
+
+    @RequestMapping ( value = "/menu" )
+    public String goMenu() {
+        return "menu";
+    }
 }

@@ -41,7 +41,8 @@
             하루종일 적고 있으니까 힘드네ㅎㅎ
         </p>
         <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black-50">Start</a>
+            <%--위치 임의 지정--%>
+            <a href="/menu" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black-50">Start</a>
         </p>
     </main>
 
