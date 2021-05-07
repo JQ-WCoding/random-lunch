@@ -1,8 +1,7 @@
 package com.frappe.randomlunch.domain.posts;
 
-import com.frappe.randomlunch.domain.BaseTimeEntity;
+import com.frappe.randomlunch.domain.common.BaseTimeEntity;
 import lombok.Builder;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.frappe.randomlunch.domain;
+package com.frappe.randomlunch.domain.common;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;

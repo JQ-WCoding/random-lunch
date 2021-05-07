@@ -1,4 +1,4 @@
-package com.frappe.randomlunch.web.dto;
+package com.frappe.randomlunch.domain.posts;
 
 import com.frappe.randomlunch.domain.posts.Posts;
 import lombok.Builder;
@@ -13,7 +13,6 @@ public class PostsSaveRequestDto {
     private String author;
 
     @Builder
-
     public PostsSaveRequestDto(String title, String content, String author) {
         this.title = title;
         this.content = content;

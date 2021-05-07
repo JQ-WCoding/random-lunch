@@ -35,13 +35,7 @@ dependencies {
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper'
     // https://mvnrepository.com/artifact/javax.servlet/jstl
     implementation group: 'javax.servlet', name: 'jstl'
-    // https://mvnrepository.com/artifact/javax.validation/validation-api
-    implementation group: 'javax.validation', name: 'validation-api'
-    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-    implementation(group: 'org.apache.httpcomponents', name: 'httpclient') {
-        exclude group: 'commons-logging'
-        exclude module: 'commons-logging'
-    }
+    implementation 'junit:junit:4.13.1'
 }
 
 test {

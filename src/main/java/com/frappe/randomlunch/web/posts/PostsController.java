@@ -1,8 +1,8 @@
-package com.frappe.randomlunch.web;
+package com.frappe.randomlunch.web.posts;
 
 import com.frappe.randomlunch.domain.posts.Posts;
-import com.frappe.randomlunch.service.PostsService;
-import com.frappe.randomlunch.web.dto.PostsSaveRequestDto;
+import com.frappe.randomlunch.service.posts.PostsService;
+import com.frappe.randomlunch.domain.posts.PostsSaveRequestDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

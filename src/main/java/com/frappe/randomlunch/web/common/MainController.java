@@ -1,4 +1,4 @@
-package com.frappe.randomlunch.web;
+package com.frappe.randomlunch.web.common;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
