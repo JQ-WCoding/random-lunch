@@ -21,6 +21,6 @@ public class MainController {
 
     @RequestMapping ( value = "/menu" )
     public String menu() {
-        return "/menu/menu";
+        return "menu/menu";
     }
 }

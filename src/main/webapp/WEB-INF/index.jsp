@@ -16,8 +16,8 @@
     <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"-->
     <!--        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"-->
     <!--        crossorigin="anonymous"></script>-->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/cover.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/cover.css">
 
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
@@ -53,6 +53,6 @@
     </footer>
 </div>
 
-<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
 </body>
 </html>

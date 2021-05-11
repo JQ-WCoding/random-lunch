@@ -36,6 +36,8 @@ dependencies {
     // https://mvnrepository.com/artifact/javax.servlet/jstl
     implementation group: 'javax.servlet', name: 'jstl'
     implementation 'junit:junit:4.13.1'
+    // 추후 jsp 에서 template 변경할때 사용 할거
+//    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 }
 
 test {
