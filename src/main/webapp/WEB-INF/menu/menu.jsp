@@ -33,6 +33,12 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
+            <form action="">
+                <div class="bg-dark border-dark mr-2">
+                    <span></span>
+                    <input type="text" class="text-white text-center">검색창 만들 곳? 아래가 더 좋을까?</input>
+                </div>
+            </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
