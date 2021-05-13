@@ -23,4 +23,9 @@ public class MainController {
     public String menu() {
         return "menu/menu";
     }
+
+    @RequestMapping(value = "/board")
+    public String board(){
+        return "board/board";
+    }
 }

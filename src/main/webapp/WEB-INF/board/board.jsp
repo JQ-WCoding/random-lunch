@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>게시판</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -13,29 +13,32 @@
     <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 </head>
 <body>
-<div class="bg-dark border-dark">
-    <p class="text-white text-center">검색창 만들 곳? 아래가 더 좋을까?</p>
+<div class="bg-dark border-dark text-center text-white">
+    검색창 만들 곳? 아래가 더 좋을까?
 </div>
 <div class="d-flex" id="wrapper">
     <!-- Sidebar-->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading text-center">뭐먹?</div>
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center text-white">뭐먹?</div>
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action bg-light" href="#!">Menu</a>
-            <a class="list-group-item list-group-item-action bg-light" href="#!">Service</a>
-            <a class="list-group-item list-group-item-action bg-light" href="#!">Contact</a>
-            <%--            게시판 이동 링크 적용--%>
+            <a class="list-group-item list-group-item-action bg-dark text-white" href="#!">Menu</a>
+            <a class="list-group-item list-group-item-action bg-dark text-white" href="#!">Service</a>
+            <a class="list-group-item list-group-item-action bg-dark text-white" href="#!">Contact</a>
+<%--            게시판 이동 링크 적용--%>
             <a class="list-group-item list-group-item-action bg-dark text-white" href="board">Q&A</a>
         </div>
     </div>
     <!-- Page Content-->
     <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-            <button class="btn btn-primary" id="menu-toggle">버튼</button>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+            <button class="btn btn-primary" id="menu-toggle">Toggle</button>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
             <form action="">
+                <div class="bg-dark border-dark mr-2">
+                    <input type="text" id="search"/>
+                </div>
             </form>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -60,12 +63,20 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <img src="img/food.jpg" alt="">
-            <div class="position-absolute carousel-caption">
-                <h1 class="mt-4 ">메뉴고르기 검색결과</h1>
-                <p class="">하단 부분에 검색 결과가 리스트 형식으로 나오도록 설정 <br>
-                    배경화면 : 흰색 배경으로 유지
-                </p>
+            <h1 class="mt-4">테이블</h1>
+<%--            <p>하단 부분에 검색 결과가 리스트 형식으로 나오도록 설정 <br>--%>
+<%--                배경화면 : 흰색 배경으로 유지--%>
+<%--            </p>--%>
+<%--            <div>--%>
+                <table class="border-dark">
+                    <th>테이블</th>
+                    <tr>
+                        <td>순번</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                        <td>작성일</td>
+                    </tr>
+                </table>
             </div>
             <%--<p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on--%>
             <%--    larger screens. When toggled using the button below, the menu will change.</p>--%>
