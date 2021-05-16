@@ -2,7 +2,10 @@ package com.frappe.randomlunch.web.common;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @Slf4j
@@ -14,18 +17,22 @@ public class MainController {
         return "default";
     }
 
-    @RequestMapping ( value = "/" )
-    public String hello() {
+    @GetMapping ( value = "/home" )
+    public String home() {
         return "index";
     }
 
-    @RequestMapping ( value = "/menu" )
-    public String menu() {
-        return "menu/menu";
-    }
+    // @GetMapping(value = "/service")
+    // public
 
-    @RequestMapping(value = "/board")
-    public String board(){
-        return "board/board";
-    }
+    // @RequestMapping ( value = "/menu" )
+    // public String menu() {
+    //     return "menu/menu";
+    // }
+    //
+    // @RequestMapping ( value = "/board" )
+    // public String board() {
+    //     return "board/board";
+    // }
+
 }

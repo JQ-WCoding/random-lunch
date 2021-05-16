@@ -37,7 +37,7 @@ dependencies {
     implementation group: 'javax.servlet', name: 'jstl'
     implementation 'junit:junit:4.13.1'
     // 추후 jsp 에서 template 변경할때 사용 할거
-//    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+//    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 test {

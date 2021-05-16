@@ -8,7 +8,7 @@
     <!--      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
     <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
     <title>Random-Lunch</title>
-    <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!--integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
     <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"-->
     <!--        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"-->
@@ -18,7 +18,7 @@
     <!--        crossorigin="anonymous"></script>-->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/cover.css">
-
+    <link rel="stylesheet" href="js/index.js">
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
 
@@ -42,7 +42,7 @@
         </p>
         <p class="lead">
             <%--위치 임의 지정--%>
-            <a href="/menu" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black-50">Start</a>
+            <a href="/menu" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black-50" id="start">Start</a>
         </p>
     </main>
 
