@@ -33,7 +33,6 @@
             </nav>
         </div>
     </header>
-
     <main class="px-3">
         <h1>Random-Lunch</h1>
         <p class="lead">
