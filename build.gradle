@@ -38,6 +38,7 @@ dependencies {
     implementation 'junit:junit:4.13.1'
     // 추후 jsp 에서 template 변경할때 사용 할거
 //    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.jsoup:jsoup:1.13.1'
 }
 
 test {
