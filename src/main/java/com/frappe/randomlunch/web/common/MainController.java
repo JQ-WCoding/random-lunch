@@ -1,9 +1,11 @@
 package com.frappe.randomlunch.web.common;
 
+import com.frappe.randomlunch.service.lunch.MenusService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,6 +15,7 @@ import java.util.Map;
 @Controller
 @Slf4j
 public class MainController {
+
     // 임시
     @RequestMapping ( value = "/index" )
     public String index() {
@@ -28,11 +31,12 @@ public class MainController {
         return modelAndView;
     }
 
-     @GetMapping(value = "/service")
-     public ModelAndView service(){
+     @GetMapping(value = "/service/{id}")
+     public ModelAndView service(@PathVariable Long id){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName( "main" );
         modelAndView.addObject( "content", "menu/menuContent.jsp" );
+
         return modelAndView;
      }
 
