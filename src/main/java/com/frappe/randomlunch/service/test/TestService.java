@@ -9,6 +9,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -23,13 +25,18 @@ public class TestService {
 
     /**
      * JPA 검색 조회 샘플
-     * @return tb_test 전체 리스트
+     *
+     * @return tb_test 해당되는 리스트
      */
     public List<TestVO> selectTestList() {
         CustomSpecifications<TestVO> specifications = new CustomSpecifications<>();
-        List<SearchCriteria<?>> list = new ArrayList<>();
-        list.add( new SearchCriteria<>( "title", "test", SearchCriteria.SearchOperation.MATCH ) );
-        specifications.add( list );
+        specifications.add(
+                SearchCriteria.builder().key( "title" ).value( "test1" ).operation( SearchCriteria.SearchOperation.MATCH ).build(),
+                SearchCriteria.builder().key( "title" ).value( "test2" ).operation( SearchCriteria.SearchOperation.MATCH ).build()
+        );
+        specifications.add(
+                SearchCriteria.builder().key( "idx" ).value( 1 ).operation( SearchCriteria.SearchOperation.EQUAL ).build()
+        );
 
         return testRepository.findAll( specifications );
     }
