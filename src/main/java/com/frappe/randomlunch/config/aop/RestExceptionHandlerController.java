@@ -30,7 +30,7 @@ public class RestExceptionHandlerController {
         // TODO 에러 유형별 로직 구현
         // ...
 
-        return new ResponseEntity<>( errorMessage, HttpStatus.INTERNAL_SERVER_ERROR );
+        return new ResponseEntity<>( errorMessage, HttpStatus.BAD_REQUEST );
     }
 
     @ExceptionHandler( Exception.class )
