@@ -1,7 +1,8 @@
 # random-lunch
 
-DB column
+DB column(MySql)
 
+Schema : Random_Lunch
   Table : Menus
     - Id (PK)
     - Category 
@@ -14,3 +15,4 @@ DB column
     - Email
     - Pw
     - Pick_Categoery
+   
