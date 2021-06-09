@@ -14,5 +14,6 @@ Schema : Random_Lunch
     - Id (PK)
     - Email
     - Pw
+    - Name
     - Pick_Categoery
    
