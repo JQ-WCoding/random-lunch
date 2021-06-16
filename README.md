@@ -1,19 +1,14 @@
 # random-lunch
 
-DB column(MySql)
+## Infra
 
-Schema : Random_Lunch
-  Table : Menus
-    - Id (PK)
-    - Category 
-    - Food_Name
-    - Location
-    - Like(Stars)
-  
-  Table : Users
-    - Id (PK)
-    - Email
-    - Pw
-    - Name
-    - Pick_Categoery
-   
+### Develop Environment
+
+* JAVA - 1.8
+* Spring - boot v2.4.5
+* DB - MySQL v8
+* DevOps - Github
+
+### DB
+
+* ERD : https://www.erdcloud.com/d/BA32TkqQshjWokpPg
