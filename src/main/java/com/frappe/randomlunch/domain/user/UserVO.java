@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
-@Table(name = "tb_user")
+@Entity(name = "tb_user")
 @Data
 @EqualsAndHashCode( callSuper = false )
 public class UserVO extends BaseTimeEntity {
