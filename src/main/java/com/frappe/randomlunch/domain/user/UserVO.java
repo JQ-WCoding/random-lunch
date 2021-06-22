@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Data
 @EqualsAndHashCode( callSuper = false )
 public class UserVO extends BaseTimeEntity {
+
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private long key;
