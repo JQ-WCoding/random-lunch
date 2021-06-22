@@ -1,16 +1,16 @@
 package com.frappe.randomlunch.domain.posts;
 
-import com.frappe.randomlunch.domain.common.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Posts {
     @Id
 
     @GeneratedValue ( strategy = GenerationType.IDENTITY )
@@ -24,14 +24,20 @@ public class Posts extends BaseTimeEntity {
 
     private String author;
 
+    private LocalDateTime createDate;
+    private LocalDateTime modifiedDate;
+
     @Builder
-    public Posts(String title, String content, String author) {
+    public Posts( Long id, String title, String content, String author, LocalDateTime createDate, LocalDateTime modifiedDate ) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.author = author;
+        this.createDate = createDate;
+        this.modifiedDate = modifiedDate;
     }
 
-    public void update(String title, String content) {
+    public void update( String title, String content) {
         this.title = title;
         this.content = content;
     }

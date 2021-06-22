@@ -1,21 +1,22 @@
 package com.frappe.randomlunch.domain.file;
 
-import com.frappe.randomlunch.domain.common.BaseTimeEntity;
-import com.frappe.randomlunch.domain.common.Key;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 
+/**
+ * 파일 테이블
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Entity(name = "TB_FILE")
-public class FileVO extends BaseTimeEntity {
-    @EmbeddedId
-    private Key fileKey;
-
+public class FileVO {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long key;
     @Column(nullable = false, columnDefinition = "VARCHAR(200)")
     private String name;
+    private LocalDateTime regDatetime;
 }
