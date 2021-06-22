@@ -19,8 +19,10 @@ public class TestVO extends BaseTimeEntity {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private long idx;
+
     @Column( nullable = false, columnDefinition = "VARCHAR(20)" )
     private String title;
+
     @Column( columnDefinition = "VARCHAR(50)" )
     private String content;
 

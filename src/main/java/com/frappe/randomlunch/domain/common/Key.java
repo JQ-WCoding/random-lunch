@@ -10,9 +10,9 @@ import java.io.Serializable;
 @Embeddable
 public class Key implements Serializable {
 
-    @Column(name = "LIKE_TRANSACTION")
+    @Column( name = "LIKE_TRANSACTION" )
     private int likeTransaction;
 
-    @Column(name = "FILE_KEY")
+    @Column( name = "FILE_KEY" )
     private int fileKey;
 }

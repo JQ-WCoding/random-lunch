@@ -8,21 +8,26 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/cover.css">
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}&libraries=services"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d68a224907e407957cb019b00426ce82&libraries=services"></script>
+    <script>
+        Kakao.init('d68a224907e407957cb019b00426ce82');
+        console.log(Kakao.isInitialized());
+    </script>
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-<header class="mb-auto">
-    <jsp:include page="layout/header.jsp"/>
-</header>
+    <header class="mb-auto">
+        <jsp:include page="layout/header.jsp"/>
+    </header>
 
-<main class="px-3">
-    <jsp:include page="${content}"/>
-</main>
+    <main class="px-3">
+        <jsp:include page="${content}"/>
+    </main>
 
-<footer class="mt-auto text-white-50">
-    <jsp:include page="layout/footer.jsp"/>
-</footer>
+    <footer class="mt-auto text-white-50">
+        <jsp:include page="layout/footer.jsp"/>
+    </footer>
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/index.js"></script>

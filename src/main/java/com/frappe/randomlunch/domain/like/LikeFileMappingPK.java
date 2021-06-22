@@ -12,6 +12,7 @@ public class LikeFileMappingPK implements Serializable {
     private static final long serialVersionUID = 2L;
 
     private long likeTransactionKey;
+
     private long fileKey;
 
 }

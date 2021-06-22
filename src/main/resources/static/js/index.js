@@ -1,12 +1,21 @@
 $( document ).ready( function () {
-
     function getLocation() {
         if ( navigator.geolocation ) {
             navigator.geolocation.getCurrentPosition( function ( position ) {
                 // 위도 경도 출력
                 alert('위도: '+ position.coords.latitude + '/ 경도: ' + position.coords.longitude );
 
+                var geocoder = new kakao.maps.services.Geocoder();
+
+                var coord = new kakao.maps.LatLng( position.coords.latitude, position.coords.longitude);
+                var callback = function(result, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        console.log(result[0].address.address_name);
+                    }
+                };
+
                 geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
             } , function ( error ){
                 console.error(error);
             },{
@@ -23,7 +32,6 @@ $( document ).ready( function () {
 
     $('#location').on("click", function (  ){
         getLocation();
-
     });
 
 } );
