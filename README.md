@@ -28,3 +28,7 @@
 5. 검색 이력 저장 로직 개발
 7. 로직 보완
 6. 회원 가입 및 인증 로직 개발
+
+## feature
+
+- [메뉴 검색](https://frappeproject.atlassian.net/l/c/wyBW6Y91)
