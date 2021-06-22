@@ -1,7 +1,5 @@
 package com.frappe.randomlunch.domain.like;
 
-import com.frappe.randomlunch.domain.common.BaseTimeEntity;
-import com.frappe.randomlunch.domain.common.Key;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
