@@ -9,17 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Service
 public class MenusService {
-    private final MenusRepository menusRepository;
-
-    @Transactional
-    public Menus save() {
-        return menusRepository.save();
-    }
-
-    @Transactional
-    public Long update(Long id,) {
-        Menus menus = menusRepository.findById( id ).orElseThrow( () -> new IllegalArgumentException( "" ) );
-
-        return id;
-    }
+    // private final MenusRepository menusRepository;
+    //
+    // @Transactional
+    // public Menus save() {
+    //     return menusRepository.save();
+    // }
+    //
+    // @Transactional
+    // public Long update(Long id,) {
+    //     Menus menus = menusRepository.findById( id ).orElseThrow( () -> new IllegalArgumentException( "" ) );
+    //
+    //     return id;
+    // }
 }
