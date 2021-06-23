@@ -51,7 +51,7 @@ public class MainController {
 
         modelAndView.setViewName( "default" );
         modelAndView.addObject( "check", check );
-
+        modelAndView.addObject( "img","\"C:\\\\Users\\\\reno\\\\Pictures\\\\test" + "\\\\" );
         return modelAndView;
     }
 }
