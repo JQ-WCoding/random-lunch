@@ -1,22 +1,10 @@
 package com.frappe.randomlunch.service.lunch;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.frappe.randomlunch.domain.menu.MenuVO;
 
-@RequiredArgsConstructor
-@Service
-public class MenusService {
-    // private final MenusRepository menusRepository;
-    //
-    // @Transactional
-    // public Menus save() {
-    //     return menusRepository.save();
-    // }
-    //
-    // @Transactional
-    // public Long update(Long id,) {
-    //     Menus menus = menusRepository.findById( id ).orElseThrow( () -> new IllegalArgumentException( "" ) );
-    //
-    //     return id;
-    // }
+import java.io.IOException;
+import java.util.List;
+
+public interface MenusService {
+    String findMenu() throws IOException;
 }
