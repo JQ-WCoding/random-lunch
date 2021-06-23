@@ -5,9 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        var text = ${check}
+
+    </script>
 </head>
 <body>
 
+<div id="menus">
+
+</div>
 ${check}
 <img src="${img}" alt="${check} 음식점 사진">
 

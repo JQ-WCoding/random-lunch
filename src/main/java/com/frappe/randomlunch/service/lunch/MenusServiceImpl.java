@@ -35,6 +35,12 @@ public class MenusServiceImpl implements MenusService {
         Document document1 = null;
         Document document2 = null;
 
+        /*
+         * TODO : 이미지 파일 로컬 저장 및 해당 루트 String 으로 보내기
+         * iterator 사용해보기? tag 제외 후 본문만 가져올 수 있는 방법
+         */
+
+
         // 이미지 버퍼 선언
         BufferedImage img = null;
 
@@ -46,7 +52,7 @@ public class MenusServiceImpl implements MenusService {
 
             FileOutputStream outputStream = new FileOutputStream( imgRoot );
 
-            ImageIO.write( img, "png", outputStream);
+            ImageIO.write( img, "png", outputStream );
 
         } catch ( Exception e ) {
             e.printStackTrace();
