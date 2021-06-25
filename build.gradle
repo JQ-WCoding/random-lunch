@@ -39,6 +39,9 @@ dependencies {
     // 추후 jsp 에서 template 변경할때 사용 할거
 //    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.jsoup:jsoup:1.13.1'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    implementation group: 'mysql', name: 'mysql-connector-java'
 }
 
 test {

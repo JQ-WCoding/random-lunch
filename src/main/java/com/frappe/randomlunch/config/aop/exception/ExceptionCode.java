@@ -8,6 +8,10 @@ import lombok.Getter;
 @Getter
 public enum ExceptionCode {
 
+    /**
+     * 지역정보가 없습니다.
+     */
+    EMPTY_SEARCH_KEYWORD( "EC400" ),
     INTERNAL_SERVER_ERROR( "EC500" );
 
     private final String code;

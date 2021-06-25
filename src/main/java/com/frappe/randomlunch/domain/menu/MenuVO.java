@@ -1,14 +1,19 @@
 package com.frappe.randomlunch.domain.menu;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NonNull;
 
-@Data
-@EqualsAndHashCode( callSuper = false )
+@Builder
+@Getter
+@JsonInclude( JsonInclude.Include.NON_NULL )
 public class MenuVO {
-    // 메뉴명
-    private String menu;
 
-    // 도로명
-    private String location;
+    // 메뉴명
+    @NonNull
+    private final String check;
+    // 메뉴 이미지
+    private final String img;
+
 }

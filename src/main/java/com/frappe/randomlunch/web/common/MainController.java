@@ -1,19 +1,26 @@
 package com.frappe.randomlunch.web.common;
 
 import com.frappe.randomlunch.domain.menu.MenuVO;
+import com.frappe.randomlunch.service.crawler.CrawlerHandlerService;
 import com.frappe.randomlunch.service.lunch.MenusServiceImpl;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.util.List;
 
-@Slf4j
 @Controller
+@RequiredArgsConstructor
+@Slf4j
 public class MainController {
+
+    private final CrawlerHandlerService<MenuVO> siksinCrawlerService;
 
     // 임시
     @RequestMapping( value = "/index" )
@@ -42,7 +49,7 @@ public class MainController {
     @GetMapping( value = "/service/find" )
     public ModelAndView findFood() throws IOException {
         MenusServiceImpl menusService = new MenusServiceImpl();
-        
+
         ModelAndView modelAndView = new ModelAndView();
 
         String check = menusService.findMenu();
@@ -56,4 +63,15 @@ public class MainController {
         modelAndView.addObject( "img", img );
         return modelAndView;
     }
+
+    @GetMapping( value = "/service/find2" )
+    public String findFood( Model model ) throws IOException {
+        MenuVO result = siksinCrawlerService.procSearchDom( "강남역" );
+        log.debug( "result :: check -> {}, img -> {}", result.getCheck(), result.getImg() );
+
+        model.addAttribute( "check", result.getCheck() );
+        model.addAttribute( "img", result.getImg() );
+        return "default";
+    }
+
 }

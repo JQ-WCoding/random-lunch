@@ -1,7 +1,6 @@
 package com.frappe.randomlunch.domain.test;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.frappe.randomlunch.domain.common.BaseTimeEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -12,9 +11,8 @@ import javax.persistence.*;
  */
 @Entity( name = "test" )
 @Data
-@EqualsAndHashCode( callSuper = true )
 @JsonInclude( JsonInclude.Include.NON_NULL )
-public class TestVO extends BaseTimeEntity {
+public class TestVO {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
