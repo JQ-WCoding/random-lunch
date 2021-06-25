@@ -5,17 +5,18 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 
 @RequiredArgsConstructor
 @Service
 public class MenusServiceImpl implements MenusService {
-
     /**
      * 메뉴 찾아서 보내주기
      *
@@ -30,8 +31,6 @@ public class MenusServiceImpl implements MenusService {
         // 다이닝 검색 url
         String diningcodeUrl = "https://www.diningcode.com/isearch.php?query=" + name;
 
-        // 임시 이미지 루트
-        String imgRoot = "C:\\Users\\reno\\Pictures\\test";
         Document document1 = null;
         Document document2 = null;
 
@@ -47,13 +46,6 @@ public class MenusServiceImpl implements MenusService {
         try {
             document1 = Jsoup.connect( siksinUrl ).get();
             document2 = Jsoup.connect( diningcodeUrl ).get();
-            URL imgUrl = new URL( "https://img.siksinhot.com/place/1458027947166169.PNG" );
-            img = ImageIO.read( imgUrl );
-
-            FileOutputStream outputStream = new FileOutputStream( imgRoot );
-
-            ImageIO.write( img, "png", outputStream );
-
         } catch ( Exception e ) {
             e.printStackTrace();
         }
@@ -63,10 +55,34 @@ public class MenusServiceImpl implements MenusService {
         Elements element = document1.select( "strong.store" );
         Elements element2 = document2.select( "span.btxt" );
         for ( Element elements : element ) {
-            System.out.println( elements.select( ".store" ) );
-            check.append( elements.select( ".store" ) );
+            System.out.println( elements.select( ".store" ).text() );
+            check.append( elements.select( ".store" ).text() );
         }
 
         return check.toString();
     }
+
+    @Override
+    public String findImg() throws IOException {
+        String name = "역삼역";
+        // 식신 검색 url
+        String siksinUrl = "https://www.siksinhot.com/search?keywords=" + name;
+
+        Document document1 = null;
+
+        try {
+            document1 = Jsoup.connect( siksinUrl ).get();
+        } catch ( Exception e ) {
+            e.printStackTrace();
+        }
+
+        String img = "";
+        Element element = document1.select( "span.img" ).first().child( 0 );
+        System.out.println(element);
+        img = element.attr( "src" );
+
+        return img;
+    }
+
+
 }

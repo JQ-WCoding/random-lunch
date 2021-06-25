@@ -46,12 +46,12 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
 
         String check = menusService.findMenu();
-
+        String img = menusService.findImg();
         log.debug( check );
 
         modelAndView.setViewName( "default" );
         modelAndView.addObject( "check", check );
-        modelAndView.addObject( "img","\"C:\\\\Users\\\\reno\\\\Pictures\\\\test" + "\\\\" );
+        modelAndView.addObject( "img", img );
         return modelAndView;
     }
 }
