@@ -12,8 +12,8 @@
 <div id="menus">
     ${check}
 </div>
-
-<img src="${img}" alt="음식점 사진">
-
+<div id="menuImg">
+    <img src="${img}" alt="음식점 사진">
+</div>
 </body>
 </html>

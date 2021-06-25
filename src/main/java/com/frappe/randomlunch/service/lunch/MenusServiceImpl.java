@@ -7,9 +7,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -67,9 +65,20 @@ public class MenusServiceImpl implements MenusService {
 
         // 첫번째 검색 태그 자식중 첫번째 값
         Element element = document1.select( "span.img" ).first().child( 0 );
-        System.out.println(element);
+
+        System.out.println("===================================================================");
+        System.out.println( "element : " + element );
+
         // 해당 태그의 src element 가져오기
         img = element.attr( "src" );
+
+        System.out.println( "img : " + img );
+
+        String[] imgSplit = img.split( "\\?" );
+        img = imgSplit[0];
+
+        System.out.println( "img : " + img );
+        System.out.println("===================================================================");
 
         return img;
     }

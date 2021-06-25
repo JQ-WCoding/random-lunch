@@ -47,7 +47,9 @@ public class MainController {
 
         String check = menusService.findMenu();
         String img = menusService.findImg();
+
         log.debug( check );
+        log.debug( img );
 
         modelAndView.setViewName( "default" );
         modelAndView.addObject( "check", check );
