@@ -37,15 +37,6 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping( value = "/service/{id}" )
-    public ModelAndView service( @PathVariable Long id ) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName( "main" );
-        modelAndView.addObject( "content", "menu/menuContent.jsp" );
-
-        return modelAndView;
-    }
-
     @GetMapping( value = "/service/find" )
     public ModelAndView findFood() throws IOException {
         MenusServiceImpl menusService = new MenusServiceImpl();
@@ -67,10 +58,12 @@ public class MainController {
     @GetMapping( value = "/service/find2" )
     public String findFood( Model model ) throws IOException {
         MenuVO result = siksinCrawlerService.procSearchDom( "강남역" );
+
         log.debug( "result :: check -> {}, img -> {}", result.getCheck(), result.getImg() );
 
         model.addAttribute( "check", result.getCheck() );
         model.addAttribute( "img", result.getImg() );
+
         return "default";
     }
 

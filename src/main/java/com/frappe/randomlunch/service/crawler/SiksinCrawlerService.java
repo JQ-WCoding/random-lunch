@@ -31,19 +31,25 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
     @Override
     public MenuVO procSearchDom( String keyword ) throws IOException {
 
-        if( StringUtils.isEmpty( keyword ) )
+        // 예외처리
+        if ( StringUtils.isEmpty( keyword ) )
             throw new BizException( ExceptionCode.EMPTY_SEARCH_KEYWORD,
                     messageSourceAccessor.getMessage( ExceptionCode.EMPTY_SEARCH_KEYWORD.getCode() ) );
 
+        // 검색 사이트 Keyword 검색
         Document result = Jsoup.connect( siteUrl + keyword ).get();
 
+        // 음식점명 가져오기
+        // TODO : Elements 로 변경
         Element element1 = result.select( "strong.store" ).first();
         Element element2 = result.select( "span.img" ).first().child( 0 );
 
+        // TODO : 반복문을 통해 count 증가 및 Map 으로 보내기
         String check = element1.text();
+        // 사진 크기 원본 가져오기
         String img = element2.attr( "src" ).split( "\\?" )[0];
 
-        return MenuVO.builder().check( check ).img( img ).build();
+        return MenuVO.builder().check( check ).img( img ).count( 1 ).build();
     }
 
 }

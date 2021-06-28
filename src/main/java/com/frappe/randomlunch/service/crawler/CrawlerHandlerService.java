@@ -17,4 +17,5 @@ public interface CrawlerHandlerService<T> {
      */
     T procSearchDom( String keyword ) throws IOException;
 
+    // TODO : 메뉴 하나 선택하도록 만들기
 }
