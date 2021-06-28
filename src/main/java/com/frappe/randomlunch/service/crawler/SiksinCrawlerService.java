@@ -41,6 +41,7 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
         Document result = Jsoup.connect( siteUrl + keyword ).get();
 
         Elements elements = result.head().getElementsByTag( "script" );
+
         for( Element el : elements ) {
             // if( !StringUtils.isEmpty( el.html() ) ) {
             // }

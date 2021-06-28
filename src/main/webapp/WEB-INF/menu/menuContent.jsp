@@ -5,6 +5,7 @@
 <div id="menus">
   ${check}
 </div>
+
 <div id="menuImg">
   <img src="${img}" alt="음식점 사진">
 </div>
