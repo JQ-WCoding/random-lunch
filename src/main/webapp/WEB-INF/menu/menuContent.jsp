@@ -1,13 +1,10 @@
+<jsp:useBean id="check" scope="request" type="java.lang.String"/>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--메뉴이미지--%>
-<div>
-  <img src="" alt="메뉴 이미지">
+<jsp:useBean id="img" scope="request" type="java.lang.String"/>
+
+<div id="menus">
+  ${check}
 </div>
-<%--메뉴 이름--%>
-<div>
-  <input type="text" value="name">
-</div>
-<%--메뉴 위치--%>
-<div>
-  <input type="text" value="location">
+<div id="menuImg">
+  <img src="${img}" alt="음식점 사진">
 </div>
