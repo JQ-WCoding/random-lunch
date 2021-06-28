@@ -8,7 +8,7 @@ import lombok.NonNull;
 @Builder
 @Getter
 @JsonInclude( JsonInclude.Include.NON_NULL )
-public class MenuVO {
+public class MenuVO{
 
     // 메뉴명
     @NonNull
@@ -16,4 +16,6 @@ public class MenuVO {
     // 메뉴 이미지
     private final String img;
 
+    // 메뉴 총 숫자
+    private final int count;
 }

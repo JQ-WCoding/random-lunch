@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
@@ -37,15 +38,6 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping( value = "/service/{id}" )
-    public ModelAndView service( @PathVariable Long id ) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName( "main" );
-        modelAndView.addObject( "content", "menu/menuContent.jsp" );
-
-        return modelAndView;
-    }
-
     @GetMapping( value = "/service/find" )
     public ModelAndView findFood() throws IOException {
         MenusServiceImpl menusService = new MenusServiceImpl();
@@ -65,13 +57,16 @@ public class MainController {
     }
 
     @GetMapping( value = "/service/find2" )
-    public String findFood( Model model ) throws IOException {
-        MenuVO result = siksinCrawlerService.procSearchDom( "강남역" );
+    public String findFood( Model model, @RequestParam( value = "address" ) String keyword ) throws IOException {
+
+        MenuVO result = siksinCrawlerService.procSearchDom( keyword );
+
         log.debug( "result :: check -> {}, img -> {}", result.getCheck(), result.getImg() );
 
         model.addAttribute( "check", result.getCheck() );
         model.addAttribute( "img", result.getImg() );
-        return "default";
+
+        return "menu/menuContent";
     }
 
 }
