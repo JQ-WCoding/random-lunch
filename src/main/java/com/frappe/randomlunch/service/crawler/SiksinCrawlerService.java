@@ -9,11 +9,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.regex.Pattern;
 
 /**
  * 식신 사이트 크롤링 서비스
@@ -36,6 +38,13 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
                     messageSourceAccessor.getMessage( ExceptionCode.EMPTY_SEARCH_KEYWORD.getCode() ) );
 
         Document result = Jsoup.connect( siteUrl + keyword ).get();
+
+        Elements elements = result.head().getElementsByTag( "script" );
+        for( Element el : elements ) {
+            // if( !StringUtils.isEmpty( el.html() ) ) {
+            // }
+            log.debug( "script body -> {}", el.html() );
+        }
 
         Element element1 = result.select( "strong.store" ).first();
         Element element2 = result.select( "span.img" ).first().child( 0 );

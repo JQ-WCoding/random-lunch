@@ -30,4 +30,11 @@ public class TestController {
         List<TestVO> list = testService.selectTestList();
         return new ResponseEntity<>( list, HttpStatus.OK );
     }
+
+    @GetMapping( value = "/index" )
+    public ResponseEntity<Object> index() {
+        String result = testService.testWebClient();
+        return new ResponseEntity<>( result, HttpStatus.OK );
+    }
+
 }
