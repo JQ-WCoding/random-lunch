@@ -42,11 +42,14 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
 
         Elements elements = result.head().getElementsByTag( "script" );
 
-        for( Element el : elements ) {
+        for ( Element el : elements ) {
             // if( !StringUtils.isEmpty( el.html() ) ) {
             // }
             log.debug( "script body -> {}", el.html() );
         }
+
+        // 랜덤한 값 출력
+        System.out.println( elements.get( ( int ) (Math.random() * elements.size()) ) );
 
         // TODO : Elements 로 변경
         // 음식점명 가져오기
