@@ -26,11 +26,11 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
 
     private final MessageSourceAccessor messageSourceAccessor;
 
-    @Value( "${crawler.site.siksinhot}" )
+    @Value ( "${crawler.site.siksinhot}" )
     private String siteUrl;
 
     @Override
-    public MenuVO procSearchDom( String keyword ) throws IOException {
+    public MenuVO procSearchDom(String keyword) throws IOException {
 
         // 예외처리
         if ( StringUtils.isEmpty( keyword ) )
@@ -49,7 +49,12 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
         }
 
         // 랜덤한 값 출력
-        System.out.println( elements.get( ( int ) (Math.random() * elements.size()) ) );
+        log.debug( String.valueOf( elements.get( ( int ) (Math.random() * elements.size()) ) ) );
+        int ranNum = ( int ) (Math.random() * elements.size());
+        Element randomElement = result.select( "strong.store" ).get( ranNum );
+        Element randomElementImg = result.select( "span.img" ).get( ranNum ).child( 0 );
+        String ranCheck = randomElement.text();
+        String ranImg = randomElementImg.attr( "src" ).split( "\\?" )[0];
 
         // TODO : Elements 로 변경
         // 음식점명 가져오기
@@ -61,7 +66,7 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
         // 사진 크기 원본 가져오기
         String img = element2.attr( "src" ).split( "\\?" )[0];
 
-        return MenuVO.builder().check( check ).img( img ).count( 1 ).build();
+        return MenuVO.builder().check( ranCheck ).img( ranImg ).build();
     }
 
 }
