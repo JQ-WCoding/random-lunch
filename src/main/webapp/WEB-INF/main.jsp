@@ -17,17 +17,22 @@
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <header class="mb-auto">
-        <jsp:include page="layout/header.jsp"/>
-    </header>
+    <div>
+        <h3 class="float-md-start mb-0">Random-Lunch</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="#">Main</a>
+            <a class="nav-link" href="#">Service</a>
+            <a class="nav-link" href="#">Contact</a>
+        </nav>
+    </div>
 
     <main class="px-3">
         <jsp:include page="${content}"/>
     </main>
 
-    <footer class="mt-auto text-white-50">
-        <jsp:include page="layout/footer.jsp"/>
-    </footer>
+    <p>
+        blahblahblah
+    </p>
 </div>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
