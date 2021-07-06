@@ -50,11 +50,15 @@ public class SiksinCrawlerService implements CrawlerHandlerService<MenuVO> {
 
         // 랜덤한 값 출력
         log.debug( String.valueOf( elements.get( ( int ) (Math.random() * elements.size()) ) ) );
+
         int ranNum = ( int ) (Math.random() * elements.size());
         Element randomElement = result.select( "strong.store" ).get( ranNum );
         Element randomElementImg = result.select( "span.img" ).get( ranNum ).child( 0 );
         String ranCheck = randomElement.text();
         String ranImg = randomElementImg.attr( "src" ).split( "\\?" )[0];
+
+        log.debug( ranCheck );
+        log.debug( ranImg );
 
         // TODO : Elements 로 변경
         // 음식점명 가져오기
