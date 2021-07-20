@@ -1,5 +1,24 @@
 var myLocation = "";
 
+$( document ).ready( function () {
+    getLocation();
+
+    console.log( myLocation );
+
+    $( '#location' ).on( "click", function () {
+        // jquery.ajax()
+        $.ajax( {
+            url: 'service/find2'
+            , type: 'GET'
+            , dataType: 'json'
+            , data: {
+                address: myLocation
+            }
+        } )
+
+    } );
+} );
+
 function getLocation() {
     if ( navigator.geolocation ) {
         navigator.geolocation.getCurrentPosition( function ( position ) {
@@ -16,6 +35,7 @@ function getLocation() {
                     console.log( "inner location : " + myLocation );
                 }
             };
+
             geocoder.coord2Address( coord.getLng(), coord.getLat(), callback );
 
         }, function ( error ) {
@@ -33,21 +53,6 @@ function getLocation() {
 
 }
 
-getLocation();
-
-$( '#location' ).on( "click", function () {
-    console.log( "location : " + myLocation );
-    // jquery.ajax()
-    $.ajax( {
-        url: 'service/find2'
-        , type: 'GET'
-        , dataType: 'json'
-        , data: {
-            address: myLocation
-        }
-    } )
-
-} );
 
 function setLocation( txt ) {
     myLocation = txt;
