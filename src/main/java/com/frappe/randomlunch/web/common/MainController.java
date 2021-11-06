@@ -21,13 +21,13 @@ public class MainController {
     private final CrawlerHandlerService<MenuVO> siksinCrawlerService;
 
     // 임시
-    @RequestMapping( value = "/index" )
+    @RequestMapping ( value = "/index" )
     public String index() {
         log.debug( "test" );
         return "default";
     }
 
-    @GetMapping( value = "/home" )
+    @GetMapping ( value = "/home" )
     public ModelAndView home() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName( "main" );
@@ -35,7 +35,7 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping( value = "/service/find" )
+    @GetMapping ( value = "/service/find" )
     public ModelAndView findFood() throws IOException {
         MenusServiceImpl menusService = new MenusServiceImpl();
 
@@ -53,8 +53,8 @@ public class MainController {
         return modelAndView;
     }
 
-    @GetMapping( value = "/service/find2")
-    public String findFood( Model model, @RequestParam( value = "address" ) String keyword ) throws IOException {
+    @GetMapping ( value = "/service/find2" )
+    public String findFood(Model model, @RequestParam ( value = "address" ) String keyword) throws IOException {
 
         MenuVO result = siksinCrawlerService.procSearchDom( keyword );
 
@@ -65,5 +65,4 @@ public class MainController {
 
         return "menu/menuContent";
     }
-
 }

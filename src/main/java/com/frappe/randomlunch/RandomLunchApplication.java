@@ -15,7 +15,6 @@ import org.springframework.context.support.MessageSourceAccessor;
 @ServletComponentScan
 @Configuration
 public class RandomLunchApplication {
-
     @Bean
     public MessageSourceAccessor messageSourceAccessor( MessageSource messageSource ) {
         return new MessageSourceAccessor( messageSource );
@@ -24,5 +23,4 @@ public class RandomLunchApplication {
     public static void main(String[] args) {
         SpringApplication.run( RandomLunchApplication.class, args );
     }
-
 }
