@@ -16,6 +16,6 @@ public class ErrorMessage {
     private final String code;
     @NonNull
     private final String message;
-    private final Object[] data;
 
+    private final Object[] data;
 }
