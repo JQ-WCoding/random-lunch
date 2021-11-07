@@ -5,7 +5,6 @@ import com.frappe.randomlunch.service.crawler.CrawlerHandlerService;
 import com.frappe.randomlunch.service.lunch.MenusServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.support.MessageSourceAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
